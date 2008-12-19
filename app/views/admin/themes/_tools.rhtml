@@ -10,7 +10,7 @@
   <div id="theme-options">
     <ul>
     <% unless @theme.current? -%>
-      <li><%= link_to 'Use theme', :action => 'change_to', :id => @theme %></li>
+      <li><%= link_to 'Use theme', { :action => 'change_to', :id => @theme }, :method => :put %></li>
       <li><%= link_to 'Edit theme', :controller => 'design', :action => 'index', :theme => @theme %></li>
     <% else -%>
       <li><%= link_to 'Edit theme', :controller => 'design', :action => 'index' %></li>

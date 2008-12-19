@@ -78,7 +78,7 @@ context "Admin Themes Controller" do
   end
 
   specify "should change theme" do
-    post :change_to, :id => 'encytemedia'
+    put :change_to, :id => 'encytemedia'
     assert_equal 'encytemedia', sites(:first).reload.current_theme_path
     assert sites(:first).theme.path.exist?, "#{sites(:first).theme.path.to_s} does not exist"
     assert_equal 'encytemedia', sites(:first).theme.name
